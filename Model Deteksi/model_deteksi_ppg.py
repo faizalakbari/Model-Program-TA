@@ -335,9 +335,27 @@ def tombol_klik():
     data_uji = pd.read_csv('FEATURE2.csv')
 
     # PROSES KLASIFIKASI MACHINE LEARNING
+
+    # Import library KNN
     from sklearn.neighbors import KNeighborsClassifier
     from sklearn import metrics
-    classifier = KNeighborsClassifier(n_neighbors = 28) #tuning parameter n_neighbors disini
+      
+    # Mencari k terbaik
+    mean_acc = np.zeros(30)
+    for i in range(1, 31):
+        # Train Model and Predict
+        knn = KNeighborsClassifier(n_neighbors=i).fit(X_train, y_train)
+        yhat = knn.predict(X_test)
+        mean_acc[i - 1] = metrics.accuracy_score(y_test, yhat)
+
+    excptIndx = 0 
+    m = np.zeros(mean_acc.size, dtype=bool)
+    m[excptIndx] = True
+    temp = np.ma.array(mean_acc, mask=m)
+    k = np.argmax(temp)+1 #Nilai k terbaik
+
+    # Klasifikasi KNN
+    classifier = KNeighborsClassifier(n_neighbors = k) #tuning parameter k
     classifier.fit(X_train, y_train)
     y_pred = classifier.predict(X_test)
 
