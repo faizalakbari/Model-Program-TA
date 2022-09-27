@@ -337,7 +337,7 @@ def tombol_klik():
     # PROSES KLASIFIKASI MACHINE LEARNING
     from sklearn.neighbors import KNeighborsClassifier
     from sklearn import metrics
-    classifier = KNeighborsClassifier(n_neighbors = 2) #tuning parameter n_neighbors disini
+    classifier = KNeighborsClassifier(n_neighbors = 28) #tuning parameter n_neighbors disini
     classifier.fit(X_train, y_train)
     y_pred = classifier.predict(X_test)
 
