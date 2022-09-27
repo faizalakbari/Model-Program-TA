@@ -11,11 +11,10 @@ Cara Menggunakan Program Model Deteksi :
 
 1) Download folder Model Deteksi
 2) Buka file model_deteksi_ppg.py menggunakan editor python (Misal : Visual Studio Code)
-3) Lakukan tuning parameter algoritma KNN dengan mengubah parameter n_neighbors* pada line 340
-4) Run Program
-5) Pilih fitur yang akan digunakan
-6) Klik tombol Run Klasifikasi
-7) Hasil performa dapat dilihat pada console terminal
+3) Run Program
+4) Pilih fitur yang akan digunakan
+5) Klik tombol Run Klasifikasi
+6) Hasil performa dapat dilihat pada console terminal
 
 Cara Menggunakan Program Metode Seleksi Fitur :
 1) Download folder Program Metode Seleksi Fitur
@@ -24,10 +23,3 @@ Cara Menggunakan Program Metode Seleksi Fitur :
 4) Run Program
 5) Hasil dari fitur yang terpilih dapat dilihat pada section masing-masing metode (Anova, Pearson Correlation, RFE)
 6) Gunakan fitur terpilih pada program Model Deteksi apabila ingin melakukan pengujian berdasarkan masing-masing metode seleksi fitur
-
-*Ketentuan tuning algoritma KNN parameter n_neighbors pada program Model Deteksi :
-1) Apabila menggunakan semua fitur hasil ekstraksi fitur, set n_neighbors = 28
-2) Apabila menggunakan fitur hasil metode seleksi fitur Anova, set n_neighbots = 6
-3) Apabila menggunakan fitur hasil metode seleksi fitur Anova, set n_neighbots = 2
-4) Apabila menggunakan fitur hasil metode seleksi fitur Anova, set n_neighbots = 2
-
